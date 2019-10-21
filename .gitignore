@@ -1,0 +1,10 @@
+node_modules
+react-scripts
+react-scripts.cmd
+dist
+webpack
+webpack-cli
+webpack-cli.cmd
+webpack-dev-server
+webpack-dev-server.cmd
+webpack-cmd
