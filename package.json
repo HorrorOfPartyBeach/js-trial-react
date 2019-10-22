@@ -1,36 +1,44 @@
 {
   "name": "js-trial-react",
-  "version": "0.1.0",
-  "description": "Frontend for JS Trial Task",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
   "scripts": {
     "start": "webpack-dev-server --open"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HorrorOfPartyBeach/js-trial-react.git"
+  },
   "keywords": [],
-  "author": "Emma Gilmour",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "^3.1.1"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "axios": "^0.19.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "7.6.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.0.0",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
-  }
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "babel": {
+    "presets": ["@babel/env", "@babel/react"],
+    "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-proposal-class-properties" ]
+  },
+  "bugs": {
+    "url": "https://github.com/HorrorOfPartyBeach/js-trial-react/issues"
+  },
+  "homepage": "https://github.com/HorrorOfPartyBeach/js-trial-react#readme"
 }
