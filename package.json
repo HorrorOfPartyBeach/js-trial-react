@@ -16,7 +16,10 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "react-bootstrap": "1.0.0-beta.14",
+    "bootstrap": "4.3.1",
+    "file-loader": "4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -35,7 +38,11 @@
   },
   "babel": {
     "presets": ["@babel/env", "@babel/react"],
-    "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-proposal-class-properties" ]
+    "plugins": ["@babel/plugin-syntax-dynamic-import", "@babel/plugin-proposal-class-properties", ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }]
+    ]
   },
   "bugs": {
     "url": "https://github.com/HorrorOfPartyBeach/js-trial-react/issues"

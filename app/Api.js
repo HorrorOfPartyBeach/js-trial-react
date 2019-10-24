@@ -7,5 +7,5 @@ export const getUsers = () => {
     .then(({data}) => {
         console.log(data, 'data');
         return data
-    })
-}
+    });
+};

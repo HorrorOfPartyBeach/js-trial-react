@@ -2,27 +2,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as api from './Api';
+import {Container, Row, Col} from 'react-bootstrap';
+//import Row from 'react-bootstrap/Row';
+import './App.css';
+
+import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component{
     state = {
-        users: []
+        users: [],
+        profile: []
     };
 
       render() {
-        //console.log(this, 'THIS');
         const {users} = this.state;
         return (
-          <div>
-          <h1>Users</h1>
+          <div id="app" role="main">
+
+          <div >
+            <img alt="Planet Romeo logo" id="romeoLogo" src="app/assets/planetromeo.svg"></img>
+            </div>
+
+<Container>
+  <Row>
           {users.map(user => {
-            console.log(user, 'user1')
-        return <div key={user.id} className="userList">
-          <p>{user.id}</p>
+        return <div key={user.id} className="userProfiles">
+
+<Col xs="3">
+        <p>{user.id}</p>
         <p>{user.name}</p>
         <p>{user.online_status}</p>
-        <img src={user.picture && user.picture.url} alt="Avatar"></img>
-       </div>
+        <img className="profilePic" src={user.picture && user.picture.url} alt={user.name}></img>
+        </Col>
+
+          </div>
         })}
+        </Row>
+</Container>
+
          </div>
         );
       }
@@ -35,7 +52,7 @@ class App extends React.Component{
           this.setState({
               users: data.items
           })
-        })
+        });
     }
 }
 
