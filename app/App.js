@@ -25,7 +25,7 @@ class App extends React.Component{
           {users.map((user) => {
         return <div key={user.id} className="userProfiles">
 
-      <Col xs={3} className="profileCols">
+      <Col sm={3} className="profileCols">
         <img className="profilePic" src={user.picture && user.picture.url || './app/assets/nopic.png'} alt={user.name}></img>
           <p id="comment">"{user.picture && user.picture.comment || 'No Comment'}"</p>
           <p className="userDetails">Name: {user.name}</p>

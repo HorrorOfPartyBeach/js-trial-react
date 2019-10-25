@@ -43,11 +43,11 @@ html {
 
 .userProfiles{
     text-align: center;
+    padding: 20px 0px 10px 0px;
 }
 
 #profileRow.row {
     margin: 0;
-    display: inline-flex;
     flex-wrap: nowrap;
 }
 
