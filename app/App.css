@@ -8,12 +8,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    background: #1c272b
+}
+
 #app {
     height: 100vh;
     text-align: center;
     display: grid;
     grid-template-rows: 2fr 1fr 8fr 1fr;
-    background: #053343;
+    background: #1c272b
 }
 
 #header {
@@ -23,11 +27,13 @@ body {
 #romeoLogo {
     float: left;
     max-width: 250px;
+    margin: 20px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 1em;
   margin-left: 15em;
   margin-right: 15em;
@@ -35,10 +41,40 @@ body {
   background-color: #164962;
 }
 
+.userProfiles{
+    text-align: center;
+}
+
+#profileRow.row {
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+.profileCols.col-3 {
+    padding: 20px 0px 10px 0px;
+    max-width: 100%;
+}
+
+.userProfiles {
+    background-color: #053343;
+    margin: 10px;
+}
+
+.userDetails {
+    display: inline-flex;
+}
+
+#comment {
+    font-size: 0.8rem;
+}
+
 p {
-    color: antiquewhite;
+    color: rgba(252, 250, 247, 0.774);
+    padding: 0px 10px 0px 10px;
 }
 
 .profilePic {
     max-height: 250px;
+    margin-bottom: 10px;
 }
