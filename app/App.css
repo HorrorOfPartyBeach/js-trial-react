@@ -17,7 +17,7 @@ html {
     text-align: center;
     display: grid;
     grid-template-rows: 2fr 1fr 8fr 1fr;
-    background: #1c272b
+    background: #1c272b;
 }
 
 #header {
@@ -31,29 +31,31 @@ html {
 }
 
 .container {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 1em;
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: 5em;
+  margin-right: 5em;
   border-radius: 15px;
   background-color: #164962;
+  columns: 4;
 }
 
 .userProfiles{
     text-align: center;
     padding: 20px 0px 10px 0px;
+    height: 600px;
 }
 
 #profileRow.row {
     margin: 0;
     flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .profileCols.col-3 {
     padding: 20px 0px 10px 0px;
-    max-width: 100%;
 }
 
 .userProfiles {
@@ -77,4 +79,28 @@ p {
 .profilePic {
     max-height: 250px;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px){
+ 
+    #profileRow.row {
+        margin: 0;
+        display: block;
+    }
+
+    .container {
+        columns: 1 auto;
+    }
+}
+
+@media only screen and (min-width: 768px){
+ 
+    #profileRow.row {
+        margin: 0;
+        display: block;
+    }
+
+    .container {
+        columns: 4 auto;
+    }
 }
