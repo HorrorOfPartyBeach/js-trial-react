@@ -7,7 +7,8 @@ import './App.css';
 
 class App extends React.Component{
     state = {
-        users: []
+        users: [],
+        fullInfo: []
     };
 
       render() {
@@ -45,18 +46,56 @@ class App extends React.Component{
 
       componentDidMount() {
         console.log('Component mounted...')
+        //this.fetchAllDetails()
+        this.fetchUsers()
+        this.fetchGetAllDetails()
+      }
+
+      // fetchAllDetails = () => {
+      //   api.getAllDetails()
+      //   .then(data => {
+      //   console.log(data, 'users')
+      //   this.setState({
+      //     users: data.items
+      //   })
+      //     console.log(data.items, 'Users items');
+      //     return data.items;
+      //   })
+      // .catch(err => {
+      //   console.log(err.message, 'users error');
+      // });
+      // }
+
+      fetchUsers =() => {
         api.getUsers()
-            .then(data => {
-        console.log(data, 'users')
+          .then(data => {
+          //console.log(data, 'users')
           this.setState({
-              users: data.items
+            users: data.items
           })
-          console.log(this.state, 'State');
+            //console.log(data.items, 'Users items');
+            return data.items;
+          })
+        .catch(err => {
+          console.log(err.message, 'users error');
+        });
+      }
+        
+      fetchGetAllDetails = () => {
+        api.getAllDetails()
+        .then(data => {
+          //console.log(data, 'Full users');
+          this.setState({
+              fullInfo: data
+          })
+          console.log(this.state, 'Full users State');
         })
         .catch(err => {
-          console.log(err.message, 'error');
+          console.log(err.message, 'Full users error');
         })
     };
+
+    combine
     
 }
 
