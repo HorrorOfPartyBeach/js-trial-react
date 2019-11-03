@@ -28,11 +28,11 @@ class ProfileCard extends Component{
       <Col sm={3} className="profileCols">
         <img className="profilePic" src={user.picture && user.picture.url || './app/assets/nopic.png'} alt={user.name}></img>
           <p id="headline">"{user.headline}"</p>
-          <p className="userDetails">Name: {user.name}</p>
-          <p className="userDetails">Age: {user.personal.age}</p>
-          <p className="userDetails">Location: {user.location.city}</p>
-          <p className="userDetails">Distance: {user.location.distance}</p>
-          <p className="userDetails">Last Login: {user.last_login}</p>
+          <p className="userDetails"><span className="keyStyle">Name: </span>{user.name}</p>
+          <p className="userDetails"><span className="keyStyle">Age: </span>{user.personal.age}</p>
+          <p className="userDetails"><span className="keyStyle">Location: </span>{user.location.city}</p>
+          <p className="userDetails"><span className="keyStyle">Distance: </span>{user.location.distance}</p>
+          <p className="userDetails"><span className="keyStyle">Last Login: </span>{user.last_login}</p>
       </Col>
 
         </div>

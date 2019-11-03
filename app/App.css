@@ -64,7 +64,11 @@ html {
 }
 
 .userDetails {
-    display: inline-flex;
+    display: block;
+}
+
+.keyStyle {
+    color: #ED1E79;
 }
 
 #headline {
