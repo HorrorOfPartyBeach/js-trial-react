@@ -2,7 +2,7 @@
 
 ## **This is a task to build a frontend displaying a list of user profiles** 
 
-A display of profiles for a dating app - more details can be found in the Project Notes section further down.
+A display of profiles for a dating app - more details can be found in the Project Notes section further down. There is also a section called UPDATES where I explain any further updates I have made to the app.
 
 The Front End runs at http://localhost:8080 or http://localhost:8081
 
@@ -58,6 +58,22 @@ I  would have liked to connect to the other endpoint and create a search functio
 Additionally, I would incorporate much more accessibility into the site so that users who rely on screen readers and other accessible devices would be able to interact with the site better.
 
 There is a lot of things I would like to do given more time and I do recognise that I need to strengthen my current skills. This has been a great task to discover the areas I can improve on and I appreciate the opportunity to build on what I know.
+
+--------------
+
+## **UPDATES**
+
+### **03/11/19**
+
+I was able to take a little more time to work on this task, which I really appreciated. I originally didn't have time to access the 2nd endpoint and I spent some time thinking about how I could do this. In the past, the endpoints I've used all lead on quite logically from each other e.g. `api/profiles` and `api/profiles/id` so I know how to access the next one using the response from the 1st. I didn't have any practice in using the data from an endpoint with a different path to the 2nd endpoint e.g. `api/search` and `api/profiles?id=...`.
+
+This was a great challenge and I'm happy to say that I was able to achieve it. I started out knowing I needed the first api response and I planned to use promises to manipulate the data by mapping the objects, finding the ids and returning an array of new data from the 2nd endpoint. I was able to console.log this up to a point but the function was large and complicated and somewhere along the way, the data got stuck and just wouldn't return!
+
+I decided to show my function to some developer friends to get a fresh perspective and one of them pointed out that mapping within promises can do strange things. He also thought the use of too many `.then` blocks was getting confusing and the data was returning in the wrong place. He suggested I use `async await` and a `for` loop instead. Once I did this, I was able to access the data and finally pass it to a new fetch in App.js.
+
+I already knew that I wanted to combine the existing user array in state with the new array so that I had an array of objects with full profiles for each user. First I concatenated the two arrays and then reduced to match the objects by id and then setState in a new array which could be mapped to access any of the data.
+
+I also took some time to move the logic out of App.js and into a new component called ProfileCard so that the app would be easier to scale in future. There is still a lot I would like to do but I'm much happier which what I have produced now.
 
 --------------
 
