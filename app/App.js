@@ -14,23 +14,24 @@ class App extends React.Component{
 
       render() {
         const {combinedProfiles} = this.state;
+        
         return (
           <div id="app" role="main">
 
-          <div >
+          <div>
             <img alt="Planet Romeo logo" id="romeoLogo" src="app/assets/planetromeo.svg"></img>
             </div>
 
 <Container id="profileContainer">
   <Row id="profileRow">
 
-          {combinedProfiles.map((user) => {
+      {combinedProfiles.map((user) => {
         return <div key={user.id} className="userProfiles">
 
       <Col sm={3} className="profileCols">
         <img className="profilePic" src={user.picture && user.picture.url || './app/assets/nopic.png'} alt={user.name}></img>
           {/* <p id="comment">"{user.picture && user.picture.comment || 'No Comment'}"</p> */}
-          <p id="comment">"{user.headline}"</p>
+          <p id="headline">"{user.headline}"</p>
           <p className="userDetails">Name: {user.name}</p>
           <p className="userDetails">Age: {user.personal.age}</p>
           {/* <p className="userDetails">Online status: {user.online_status}</p> */}
@@ -39,10 +40,10 @@ class App extends React.Component{
           <p className="userDetails">Last Login: {user.last_login}</p>
       </Col>
 
-          </div>
-        })}
+        </div>
+      })}
 
-        </Row>
+    </Row>
 </Container>
 
          </div>
@@ -55,6 +56,7 @@ class App extends React.Component{
         this.fetchAllDetails();
       }
 
+      // Fetch the returned data of the initial basic user information
       fetchUsers = async () => {
         const basicUsers = await api.getUsers();
         this.setState({
@@ -62,6 +64,7 @@ class App extends React.Component{
         });
       };
 
+      // Fetch the returned data of the more detailed user information
       fetchAllDetails = async () => {
         const details = await api.getAllDetails();
         const users = this.state.users;
@@ -90,37 +93,6 @@ class App extends React.Component{
         console.log(this.state.combinedProfiles, 'profiles');
       };
 
-
-
-      // fetchUsers = () => {
-      //   api.getUsers()
-      //     .then(data => {
-      //     //console.log(data, 'users')
-      //     this.setState({
-      //       users: data.items
-      //     })
-      //       //console.log(data.items, 'Users items');
-      //       return data.items;
-      //     })
-      //   .catch(err => {
-      //     console.log(err.message, 'users error');
-      //   });
-      // }
-        
-    //   fetchAllDetails = () => {
-    //     api.getAllDetails()
-    //     .then(data => {
-    //       //console.log(data, 'Full users');
-    //       this.setState({
-    //           fullInfo: data
-    //       })
-    //       console.log(data, 'Full users State');
-    //       return data;
-    //     })
-    //     .catch(err => {
-    //       console.log(err.message, 'Full users error');
-    //     })
-    // };    
 }
 
 export default App;
