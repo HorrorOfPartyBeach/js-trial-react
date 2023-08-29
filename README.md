@@ -88,7 +88,7 @@ I also took some time to move the logic out of App.js and into a new component c
 
 ## **Authors**
 
-**Emma Gilmour** - [HorrorOfPartyBeach](https://github.com/HorrorOfPartyBeach)
+[HorrorOfPartyBeach](https://github.com/HorrorOfPartyBeach)
 
 ---------------
 
